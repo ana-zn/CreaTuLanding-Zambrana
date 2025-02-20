@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
-import { LuHeart } from "lucide-react";
+import './item.css'
+import { LuHeart } from "react-icons/lu";
 
 function Item(props) {
     function agregarAlCarrito() {
