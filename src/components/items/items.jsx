@@ -1,5 +1,5 @@
-import './Item.css'; 
-import { LuHeart } from "react-icons/lu";
+import PropTypes from 'prop-types';
+import { LuHeart } from "lucide-react";
 
 function Item(props) {
     function agregarAlCarrito() {
@@ -16,7 +16,6 @@ function Item(props) {
                 ${props.price || "No Disponible"}
             </span>
         </div>
-        {/* Agregamos la imagen dinámicamente desde las props */}
         <img src={props.src || "imagen_por_defecto.jpg"} alt={props.nombre || "Producto"} className='item-image' />
         <div className='item-buttons'>
             <button id='add-button' onClick={agregarAlCarrito}>Agregar al Carrito</button>
@@ -25,5 +24,11 @@ function Item(props) {
       </div>
     ); 
 }
+
+Item.propTypes = {
+    nombre: PropTypes.string,
+    price: PropTypes.number,
+    src: PropTypes.string
+};
 
 export default Item;
